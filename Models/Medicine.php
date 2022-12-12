@@ -3,7 +3,7 @@
 class Medicine extends Product
 {
 
-  public $requiresPrescription;
+  private $requiresPrescription;
   public $mainComponent;
   public $targetAnimal;
 
@@ -14,5 +14,14 @@ class Medicine extends Product
     $this->requiresPrescription = $_requiresPrescription;
     $this->mainComponent = $_mainComponent;
     $this->targetAnimal = $_targetAnimal;
+  }
+
+  public function getInfo()
+  {
+    $output = $this->requiresPrescription ? 'Richiede la ricetta' : 'Non richiede la ricetta';
+    $basicInfo = parent::getInfo();
+    $specificInfo = "Inoltre questo prodotto $output, il principio attivo è: $this->mainComponent, ed è fatta per l'animale: $this->targetAnimal";
+
+    return "$basicInfo - $specificInfo";
   }
 }

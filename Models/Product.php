@@ -3,10 +3,10 @@
 class Product
 {
   public $name;
-  public $id;
+  protected $id;
   public $brand;
   public $price;
-  public $isAvailable = true;
+  protected $isAvailable = true;
   public $category;
 
   public function __construct($_name, $_id, $_brand, $_price, Category $_category)
@@ -18,10 +18,11 @@ class Product
     $this->category = $_category;
   }
 
-  public function getBasicInfo()
+  public function getInfo()
   {
+    $this->isAvailable ? $output = 'Disponibile' : $output =  'Non disponibile';
 
-    return "Questo prodotto si chiama $this->name, ha un id=$this->id, costa $this->price, la marca è $this->brand, e ha disponilità $this->isAvailable";
+    return "Questo prodotto si chiama: $this->name, ha un id=$this->id, costa: $this->price, la marca è $this->brand, e ha disponilità: $output";
   }
 
   public function setAvailability($yes)

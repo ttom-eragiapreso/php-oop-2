@@ -10,11 +10,13 @@ require __DIR__ . '/Models/Medicine.php';
 $allProducts = [
   new Food('Pasta', 111, 'Marca X', 12.50, new Category('Cibo'), 120, ['ingrediente1, ingrediente2, ingrediente3'], 'Pie Flavor'),
   new Medicine('Tachipirina', 456, 'Marca Y', 20.99, new Category('Parafarmacia'), true, 'Paracetamolo', 'Dog'),
-  new Toy('Pallina', 789, 'Marca Z', 2.5, new Category('Giocattolo'), 'Rimbalza', 4)
+  new Toy('Pallina', 789, 'Marca Z', 2.5, new Category('Giocattolo'), 'Rimbalza', 4),
+  new Medicine('Oki', 489, 'Marchio H', 15.45, new Category('Parafarmacia'), false, 'Boh', 'Umani')
 ];
 
+$allProducts[2]->setAvailability(0);
 
-//var_dump($allProducts[0]->setAvailability(0));
+
 ?>
 
 
@@ -40,7 +42,7 @@ $allProducts = [
             <div class="card-body">
               <h5 class="card-title"><?php echo $product->name ?></h5>
               <h6 class="card-subtitle mb-2 text-muted"><?php echo $product->category->name ?></h6>
-              <p class="card-text"><?php echo $product->getBasicInfo() ?></p>
+              <p class="card-text fw-bold"><?php echo $product->getInfo() ?></p>
             </div>
           </div>
         </div>

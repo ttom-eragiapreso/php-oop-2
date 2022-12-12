@@ -12,4 +12,12 @@ class Toy extends Product
     $this->feature = $_feature;
     $this->size = $_size;
   }
+
+  public function getInfo()
+  {
+    $basicInfo = parent::getInfo();
+    $specificInfo = "Inoltre questo prodotto $this->feature, e ha una misura di: $this->size";
+
+    return "$basicInfo - $specificInfo";
+  }
 }
