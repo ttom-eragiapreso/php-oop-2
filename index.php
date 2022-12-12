@@ -11,7 +11,8 @@ $allProducts = [
   new Food('Pasta', 111, 'Marca X', 12.50, new Category('Cibo'), 120, ['ingrediente1, ingrediente2, ingrediente3'], 'Pie Flavor'),
   new Medicine('Tachipirina', 456, 'Marca Y', 20.99, new Category('Parafarmacia'), true, 'Paracetamolo', 'Dog'),
   new Toy('Pallina', 789, 'Marca Z', 2.5, new Category('Giocattolo'), 'Rimbalza', 4),
-  new Medicine('Oki', 489, 'Marchio H', 15.45, new Category('Parafarmacia'), false, 'Boh', 'Umani')
+  new Medicine('Oki', 489, 'Marchio H', 15.45, new Category('Parafarmacia'), false, 'Boh', 'Umani'),
+  new Food('Croccantini', 756, 'Crock', 50.49, new Category('Cibo'), 120, ['Pollo', 'Verdure', 'Uova'], 'Pollo Saltato')
 ];
 
 $allProducts[2]->setAvailability(0);
