@@ -17,4 +17,21 @@ class Product
     $this->price = $_price;
     $this->category = $_category;
   }
+
+  public function getBasicInfo()
+  {
+
+    return "Questo prodotto si chiama $this->name, ha un id=$this->id, costa $this->price, la marca è $this->brand, e ha disponilità $this->isAvailable";
+  }
+
+  public function setAvailability($yes)
+  {
+    $output = '';
+    if ($yes) $this->isAvailable = true;
+    else $this->isAvailable = false;
+
+    $this->isAvailable ? $output = 'Disponibile' : $output =  'Non disponibile';
+
+    return $output;
+  }
 }

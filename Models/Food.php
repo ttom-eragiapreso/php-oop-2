@@ -15,4 +15,13 @@ class Food extends Product
     $this->ingredients = $_ingredients;
     $this->flavor = $_flavor;
   }
+
+  public function getFullInfo()
+  {
+    $numberOfIngredients = count($this->ingredients);
+    $basicInfo = parent::getBasicInfo();
+    $specificInfo = "Inoltre questo prodotto pesa $this->weight, è al gusto $this->flavor e ha $numberOfIngredients ingredienti";
+
+    return "$basicInfo - $specificInfo";
+  }
 }
